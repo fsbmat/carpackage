@@ -134,6 +134,7 @@ plot(allEffects(mod.slid.1,
     ylab="Composite Hourly Wages", ask=FALSE)
 mod.slid.2 <- lm(log(wages) ~ sex + education + poly(age, 2), data=SLID,
     subset = age >= 18 & age <= 65 & education >= 6)
+summary(mod.slid.2)
 plot(allEffects(mod.slid.2,
         xlevels=list(age=18:65, education=6:20),
         given.values=c(sexMale=0.5),
